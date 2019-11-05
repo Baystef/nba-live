@@ -1,0 +1,27 @@
+.grid {
+  display: grid;
+  grid-template-columns: 2rem 5fr repeat(3, 1fr) 1.5fr;
+}
+
+.standings-header {
+  font-weight: bold;
+  color: azure;
+  padding: 3px;
+  background-color: rgba(85, 87, 84, 0.712);
+}
+
+span:not(.team-name-header):not(.team-name) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.standings-body {
+  background: rgb(236, 236, 236);
+  border-bottom: 1px solid rgb(255, 255, 255);
+  padding: 0.5rem;
+}
+
+.team-name, .team-name-header {
+  padding-left: 1.2rem;
+}

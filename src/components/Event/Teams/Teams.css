@@ -1,0 +1,23 @@
+.team-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  justify-items: center;
+  width: 100%;
+  margin-top: -1rem;
+  padding-top: 3rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 14rem;
+  height: 14rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.card-img-top {
+  height: 80%;
+  width: 80%;
+}

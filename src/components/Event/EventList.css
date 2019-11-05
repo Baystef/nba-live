@@ -1,0 +1,71 @@
+.event {
+  display: grid;
+  background-color: rgba(235, 250, 228, 0.712);
+  margin-bottom: 0.2rem;
+  grid-auto-rows: minmax(1px, auto);
+  grid-template-areas:
+  "time ht hpf hp1 hp2 hp3 hp4"
+  "time at apf ap1 ap2 ap3 ap4";
+}
+
+.event div {
+  border: 1px solid  rgb(255, 255, 255);
+  padding-left: 2px;
+}
+
+.event div:not(.time, .homeTeam, .awayTeam) {
+  height: 3.2rem;
+  width: 3.2rem;
+}
+
+.time {
+  grid-area: time;
+}
+
+.homeTeam {
+  grid-area: ht;
+}
+
+.awayTeam {
+  grid-area: at;
+}
+
+.homePointFinal {
+  grid-area: hpf;
+}
+
+.awayPointFinal {
+  grid-area: apf;
+}
+
+.homePoint1 {
+  grid-area: hp1;
+}
+
+.homePoint2 {
+  grid-area: hp2;
+}
+
+.homePoint3 {
+  grid-area: hp3;
+}
+
+.homePoint4 {
+  grid-area: hp4;
+}
+
+.awayPoint1 {
+  grid-area: ap1;
+}
+
+.awayPoint2 {
+  grid-area: ap2;
+}
+
+.awayPoint3 {
+  grid-area: ap3;
+}
+
+.awayPoint4 {
+  grid-area: ap4;
+}

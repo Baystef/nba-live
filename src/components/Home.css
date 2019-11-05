@@ -1,0 +1,45 @@
+#overlay {
+  position: absolute;
+  height: 100vh;
+  top: calc(4.75rem + 2.625rem + 2.5rem);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.89);
+  z-index: 2;
+}
+
+#home-text-container {
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  z-index: 2;
+}
+
+#home-text {
+  align-self: center;
+  font-size: 3rem;
+  text-align: center;
+  width: 80%;
+  font-family: 'Spinnaker';
+}
+
+#background-img {
+  position: relative;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT91GErofDZFLPmKZqjD8tbfOwkbDKugI78ciN1IFpilC1vWNBy');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  margin-top: -1rem;
+}
+
+@media (max-width: 30rem) {
+  #home-text {
+    align-self: center;
+    font-size: 1rem;
+  }
+}
