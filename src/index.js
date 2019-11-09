@@ -3,6 +3,7 @@ import ReactDom from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { config } from 'dotenv';
 import App from './components/App';
+import './index.css';
 
 config();
 

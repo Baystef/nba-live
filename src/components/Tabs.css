@@ -1,0 +1,17 @@
+#tabs-container {
+  height: 20%;
+}
+
+.nav-tabs a {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  background: linear-gradient(to bottom, #ECECEC 50%, #D1D1D1 100%);
+  text-shadow: 0 1px #FFF;
+  padding: 0 20px;
+  color: rgb(139, 139, 139);
+}
+
+.nav-tabs a:nth-child(1) {
+  border-right: 1px solid #afaeae;
+  border-left: 1px solid #afaeae;
+}

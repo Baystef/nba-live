@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import './Tabs.css';
 
 
 class Tabs extends Component {
@@ -27,7 +28,7 @@ class Tabs extends Component {
 
   render() {
     return (
-      <div>
+      <div id="tabs-container">
         <ul className="nav nav-tabs d-flex" id="myTab" role="tablist">
           {/* <li className="nav-item">
             <NavLink to="/results" className="nav-link" id="results-tab" data-toggle="tab" role="tab" aria-controls="results" aria-selected="true">Results</NavLink>
@@ -41,7 +42,7 @@ class Tabs extends Component {
         </ul>
         <section className="event__header container-fluid d-flex bd-highlight mb-3 bg-info">
           <div className="p-2 bd-highlight">{`USA:NBA ${this.seasonType()}`}</div>
-          <Link to="/standings" className="ml-auto p-2 bd-highlight text-white">Standings</Link>
+          <NavLink to="/standings" className="ml-auto p-2 bd-highlight text-white">Standings</NavLink>
         </section>
       </div>
     );

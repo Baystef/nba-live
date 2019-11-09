@@ -3,6 +3,10 @@
   grid-template-columns: 2rem 5fr repeat(3, 1fr) 1.5fr;
 }
 
+.standings-wrapper {
+  margin-top: 1rem;
+}
+
 .standings-header {
   font-weight: bold;
   color: azure;
