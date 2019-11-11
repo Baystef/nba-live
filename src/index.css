@@ -7,5 +7,9 @@ html {
 }
 
 body {
+  height: 100%;
+}
+
+#root > div {
   height: 100vh;
 }

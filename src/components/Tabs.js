@@ -40,7 +40,7 @@ class Tabs extends Component {
             <NavLink to="/teams" className="nav-link" id="teams-tab" data-toggle="tab" role="tab" aria-controls="teams" aria-selected="false">Teams</NavLink>
           </li>
         </ul>
-        <section className="event__header container-fluid d-flex bd-highlight mb-3 bg-info">
+        <section className="event__header container-fluid d-flex bd-highlight bg-info">
           <div className="p-2 bd-highlight">{`USA:NBA ${this.seasonType()}`}</div>
           <NavLink to="/standings" className="ml-auto p-2 bd-highlight text-white">Standings</NavLink>
         </section>
