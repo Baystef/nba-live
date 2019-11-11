@@ -23,7 +23,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div id="main-wrapper">
         <Nav />
         <Tabs season={this.loadData} />
         <Switch>
