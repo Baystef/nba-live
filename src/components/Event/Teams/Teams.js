@@ -1,33 +1,31 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import TeamList from './TeamList';
 import Spinner from '../../Spinner';
+import { fetchTeams } from '../../../actions';
 import './Teams.css';
 
 class Teams extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { data: [] };
-  }
-
   componentDidMount() {
-    this.getTeams();
+    const { fetchTeams: fetchTeamsProp } = this.props;
+    fetchTeamsProp();
   }
 
-  getTeams = async () => {
-    const { teams } = this.props;
-    const result = await teams('teams');
-    this.setState({ data: result.data });
-  }
+  // getTeams = async () => {
+  //   const { teams } = this.props;
+  //   const result = await teams('teams');
+  //   this.setState({ data: result.data });
+  // }
 
   render() {
-    const { data } = this.state;
+    const { teams } = this.props;
 
-    if (!data.length) {
+    if (!teams.length) {
       return <Spinner />;
     }
 
-    const teamList = data.map((team) => {
+    const teamList = teams.map((team) => {
       return <TeamList team={team} key={team.TeamID} />;
     });
 
@@ -37,6 +35,10 @@ class Teams extends Component {
       </div>
     );
   }
+}
+
+const mapStateToProps = (state) => {
+  return { teams: state.teams };
 };
 
-export default Teams;
+export default connect(mapStateToProps, { fetchTeams })(Teams);

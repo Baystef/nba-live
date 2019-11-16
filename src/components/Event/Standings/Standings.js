@@ -1,25 +1,23 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import StandingsList from './StandingsList';
 import Spinner from '../../Spinner';
+import { fetchStandings } from '../../../actions';
 import './Standings.css';
 
 class Standings extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { data: [] };
-  }
-
   componentDidMount() {
-    this.getStandings();
+    const { fetchStandings: fetchStandingsProp } = this.props;
+    fetchStandingsProp();
   }
 
-  getStandings = async () => {
-    const { standings } = this.props;
-    const { data: { Season } } = await standings('CurrentSeason');
-    const result = await standings(`Standings/${Season}`);
-    this.setState({ data: result.data });
-  }
+  // getStandings = async () => {
+  //   const { standings } = this.props;
+  //   const { data: { Season } } = await standings('CurrentSeason');
+  //   const result = await standings(`Standings/${Season}`);
+  //   this.setState({ data: result.data });
+  // }
 
   renderStandings = (component) => {
     return (
@@ -38,13 +36,13 @@ class Standings extends Component {
   }
 
   render() {
-    const { data } = this.state;
+    const { standings } = this.props;
 
-    if (!data.length) {
+    if (!standings.length) {
       return <Spinner />;
     }
 
-    const standingsList = data.sort((a, b) => b.Percentage - a.Percentage).map((standing, i) => {
+    const standingsList = standings.sort((a, b) => b.Percentage - a.Percentage).map((standing, i) => {
       return <StandingsList standing={standing} index={i} key={standing.TeamID} />;
     });
 
@@ -56,4 +54,8 @@ class Standings extends Component {
   }
 }
 
-export default Standings;
+const mapStateToProps = (state) => {
+  return { standings: state.standings };
+};
+
+export default connect(mapStateToProps, { fetchStandings })(Standings);

@@ -1,27 +1,19 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { getSeasonType } from '../actions';
 import './Tabs.css';
 
 
 class Tabs extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { seasonType: '' };
-  }
-
   componentDidMount() {
-    this.getSeasonType();
+    const { getSeasonType: getSeasonTypeProp } = this.props;
+    getSeasonTypeProp();
   }
-
-  getSeasonType = async () => {
-    const { season } = this.props;
-    const result = await season('CurrentSeason');
-    this.setState({ seasonType: result.data.SeasonType });
-  };
 
   seasonType() {
-    const { seasonType } = this.state;
+    const { seasonType } = this.props;
     if (!seasonType) return null;
     return seasonType === 'REG' ? 'Regular Season' : 'Pre-Season';
   }
@@ -49,4 +41,8 @@ class Tabs extends Component {
   }
 }
 
-export default Tabs;
+const mapStateToProps = (state) => {
+  return { seasonType: state.seasonType.seasonType };
+};
+
+export default connect(mapStateToProps, { getSeasonType })(Tabs);

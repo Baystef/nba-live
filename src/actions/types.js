@@ -1,0 +1,3 @@
+export const FETCH_TEAMS = 'FETCH_TEAMS';
+export const FETCH_STANDINGS = 'FETCH_STANDINGS';
+export const GET_SEASON_TYPE = 'GET_SEASON_TYPE';
